@@ -4,7 +4,7 @@
 function invertCase(str) {
   let invertString = "";
   for (const letter of str) {
-    if (letter.toUpperCase() === letter) {
+    if (letter === letter.toUpperCase() ) {
       invertString += letter.toLowerCase();
     } else {
       invertString += letter.toUpperCase();
