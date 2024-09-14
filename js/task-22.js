@@ -16,6 +16,18 @@ const Theme = {
 const themeInput = document.querySelector('.theme-switch__toggle');
 const bodyColor = document.querySelector('body');
 
+const checkLs = localStorage.getItem('theme');
+if (checkLs) {
+    bodyColor.classList.add(checkLs);
+} else {
+    bodyColor.classList.add('light-theme');
+};
+
+if (checkLs === 'dark-theme') {
+    themeInput.checked = true;
+};
+
+
 const handleColor = (event) => {
     event.currentTarget;
     if (event.currentTarget.checked) {
@@ -27,8 +39,6 @@ const handleColor = (event) => {
         bodyColor.classList.add('light-theme');
         localStorage.setItem('theme', 'light-theme')
     }
-
-
 };
 
 themeInput.addEventListener('change', handleColor);
